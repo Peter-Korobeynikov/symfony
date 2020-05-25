@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Common\TProductManager;
 use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,19 +18,20 @@ use Knp\Component\Pager\PaginatorInterface;
  */
 class CategoryController extends AbstractController
 {
+    use TProductManager;    // Wiring service
+
     /**
      * @Route("/", name="category_index", methods={"GET"})
      */
-    public function index(Request $request, CategoryRepository $categoryRepository, PaginatorInterface $paginator): Response
+    public function index(Request $request, CategoryRepository $categoryRepository,
+                          PaginatorInterface $paginator): Response
     {
-        $queryBuilder = $categoryRepository->findAllCategories();
         $categories = $categoryRepository->findAll();
-
+        //$queryBuilder = $categoryRepository->findAllCategories();
         $pagination = $paginator->paginate(
-            $categories,
-            //$queryBuilder,
+            $categories, // $queryBuilder,
             $request->query->getInt('page', 1),
-            2 /*page number*/
+            5 /*page number*/
         );
 
         return $this->render('category/index.html.twig', [
@@ -42,20 +45,17 @@ class CategoryController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $category = new Category();
-        $form = $this->createForm(CategoryType::class, $category);
+        $form = $this->createForm(CategoryType::class,
+            $this->getPM()->attach(Category::class)->instance());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($category);
-            $entityManager->flush();
-
+            $this->getPM()->update();
             return $this->redirectToRoute('category_index');
         }
 
         return $this->render('category/new.html.twig', [
-            'category' => $category,
+            'category' => $this->getPM()->instance(),
             'form' => $form->createView(),
         ]);
     }
@@ -75,17 +75,17 @@ class CategoryController extends AbstractController
      */
     public function edit(Request $request, Category $category): Response
     {
-        $form = $this->createForm(CategoryType::class, $category);
+        $form = $this->createForm(CategoryType::class,
+            $this->getPM()->attach(Category::class, $category)->instance());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
+            $this->getPM()->update();
             return $this->redirectToRoute('category_index');
         }
 
         return $this->render('category/edit.html.twig', [
-            'category' => $category,
+            'category' => $this->getPM()->instance(),
             'form' => $form->createView(),
         ]);
     }
@@ -96,11 +96,10 @@ class CategoryController extends AbstractController
     public function delete(Request $request, Category $category): Response
     {
         if ($this->isCsrfTokenValid('delete'.$category->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($category);
-            $entityManager->flush();
+            $this->getPM()
+                ->link($category)
+                ->remove();
         }
-
         return $this->redirectToRoute('category_index');
     }
 }

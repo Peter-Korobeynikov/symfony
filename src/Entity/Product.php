@@ -2,7 +2,10 @@
 
 namespace App\Entity;
 
+use App\Common\TProductManager;
 use App\Repository\ProductRepository;
+use App\Service\EntityIntegrityInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
@@ -13,8 +16,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
-class Product
+class Product implements EntityIntegrityInterface
 {
+    use TProductManager;
+
     /**
      * The unique auto incremented primary key
      * @var int
@@ -62,7 +67,11 @@ class Product
     private $eId;
 
     public function __construct() {
-        $this->$categories = new ArrayCollection();
+        $this->id = 0;
+        $this->setTitle('');
+        $this->setPrice(0);
+        $this->setEid(0);
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int { return $this->id; }
@@ -90,4 +99,14 @@ class Product
     public function removeCategory(Category $category) {
         $this->categories->removeElement($category);
     }
+
+    //------------------- EntityIntegrityInterface
+    public function onUpdate(EntityManagerInterface $em,array $context = []) {
+        echo '*** onUpdate Product';
+    }
+
+    public function onRemove(EntityManagerInterface $em) {
+        echo '*** onRemove Product';
+    }
+
 }

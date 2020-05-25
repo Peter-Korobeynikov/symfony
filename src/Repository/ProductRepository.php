@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Service\EntityIntegrityInterface;
+use App\Service\ProductManager;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -18,6 +20,7 @@ class ProductRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Product::class);
     }
+    public function __destruct() {}
 
     // /**
     //  * @return Product[] Returns an array of Product objects

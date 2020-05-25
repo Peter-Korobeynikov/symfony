@@ -75,15 +75,13 @@ class MainController extends AbstractController
     }
 
     /**
-     * Редактирование данных
+     * Тестовый вывод списка
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/list-cat", name="listCategory")
      */
     public function listCategory(EntityManagerInterface $em) {
         $categories = $em->getRepository(Category::class)->findBy([],['id'=>'ASC']);
         dd($categories);
-        $em->flush();
-        //return new Response('<html><body>Объект удалён</body></html>');
     }
 
 }

@@ -14,17 +14,17 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CategoryRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
+    public function __construct(ManagerRegistry $registry) {
         parent::__construct($registry, Category::class);
     }
+    public function __destruct() {}
 
-    public function findAllCategories() {
-        return $this->createQueryBuilder('c')
-            ->orderBy('c.id', 'ASC')
-            ->getQuery()
-            ;
-    }
+//    public function findAllCategories() {
+//        return $this->createQueryBuilder('c')
+//            ->orderBy('c.id', 'ASC')
+//            ->getQuery()
+//            ;
+//    }
 
     // /**
     //  * @return Category[] Returns an array of Category objects

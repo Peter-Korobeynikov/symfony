@@ -3,14 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
-
+use App\Service\EntityIntegrityInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
  */
-class Category
+class Category implements EntityIntegrityInterface, \JsonSerializable
 {
     /**
      * The unique auto incremented primary key
@@ -36,9 +37,16 @@ class Category
     private $eId;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $content;
+
+    public function __construct() {
+        $this->id = 0;
+        $this->eId = 0;
+        $this->title = '';
+        $this->content = "";
+    }
 
     public function getId(): ?int { return $this->id; }
 
@@ -51,4 +59,32 @@ class Category
     public function getContent(): ?string { return $this->content; }
     public function setContent(string $content): self { $this->content = $content; return $this; }
 
+    public function __toString(): string {
+        $str = implode(', ',$this->jsonSerialize());
+        return (string) $str;
+    }
+
+    public function jsonSerialize() {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'eId' => $this->eId,
+            'content' => $this->content
+        ];
+    }
+
+    //------------------- EntityIntegrityInterface
+    public function onUpdate(EntityManagerInterface $em,array $context = []) {
+        echo '*** onUpdate Category';
+    }
+
+    public function onRemove(EntityManagerInterface $em) {
+        echo '*** onRemove Category';
+        // При удалении категории - удалим её из коллекций продуктов
+        $repository = $em->getRepository(Product::class);
+        $products = $repository->findAll();
+        foreach ($products as $product) {
+            $product->removeCategory($this);
+        }
+    }
 }
