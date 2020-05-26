@@ -15,4 +15,4 @@ framework:
     php_errors:
         log: true
 
-    ide: 'phpstorm'
+#    ide: 'phpstorm'

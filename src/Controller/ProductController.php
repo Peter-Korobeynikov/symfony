@@ -23,6 +23,10 @@ class ProductController extends AbstractController
      */
     public function index(ProductRepository $productRepository): Response
     {
+        $path = __DIR__. DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Service' . DIRECTORY_SEPARATOR;
+        $fileName = $path . 'products.json';
+        $this->getPM()->import(Product::class, $fileName);
+
         return $this->render('product/index.html.twig', [
             'products' => $productRepository->findAll(),
         ]);
@@ -47,24 +51,6 @@ class ProductController extends AbstractController
             'product' => $this->getPM()->instance(),
             'form' => $form->createView()
         ]);
-
-//        $product = new Product();
-//        $form = $this->createForm(ProductType::class, $product);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $entityManager = $this->getDoctrine()->getManager();
-//            $entityManager->persist($product);
-//            $entityManager->flush();
-//
-//            return $this->redirectToRoute('product_index');
-//        }
-//
-//        return $this->render('product/new.html.twig', [
-//            'product' => $product,
-//            'form' => $form->createView(),
-//        ]);
-
     }
 
     /**
@@ -96,20 +82,6 @@ class ProductController extends AbstractController
             'product' => $this->getPM()->instance(),
             'form' => $form->createView()
         ]);
-
-//        $form = $this->createForm(ProductType::class, $product);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $this->getDoctrine()->getManager()->flush();
-//
-//            return $this->redirectToRoute('product_index');
-//        }
-//
-//        return $this->render('product/edit.html.twig', [
-//            'product' => $product,
-//            'form' => $form->createView(),
-//        ]);
     }
 
     /**
@@ -120,9 +92,6 @@ class ProductController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {
             // Обработку выполняет сервис App\Service\ProductManager (use TProductManager)
             $this->getPM()->link($product)->remove();
-//            $entityManager = $this->getDoctrine()->getManager();
-//            $entityManager->remove($product);
-//            $entityManager->flush();
         }
         return $this->redirectToRoute('product_index');
     }

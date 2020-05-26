@@ -3,8 +3,10 @@
 namespace App\Service;
 
 use App\Common\TEntityManager;
-use App\Service\EntityIntegrityInterface;
-use JMS\Serializer\SerializerBuilder;
+//use App\Entity\Category;
+//use App\Service\EntityIntegrityInterface;
+//use JMS\Serializer\SerializerBuilder;
+//use Symfony\Component\Validator\Validation;
 
 // ProductManager service
 class ProductManager
@@ -24,7 +26,7 @@ class ProductManager
     public function is_ready(): bool    { return (isset($this->_em) && $this->attached()); }
 
     public function className(): string { return get_class($this->_inst); }
-    public function repository()        { return $this->_em->getRepository($this->className()); }
+    public function repository($class)  { return $this->_em->getRepository($class); }
 
     public function instance(): ?object { return $this->_inst; }
     public function integrity(): ?EntityIntegrityInterface { return $this->_inst; }
@@ -39,36 +41,46 @@ class ProductManager
         return $this;
     }
 
-    public function find(array $criteria, array $orderBy = null, $limit = 1, $offset = null) {
-        return $this->repository()->findBy($criteria, $orderBy, $limit, $offset);
+    public function find(string $class, array $criteria, array $orderBy = null, $limit = 1, $offset = null) {
+        return $this->repository($class)->findBy($criteria, $orderBy, $limit, $offset);
     }
 
     // -------------------------
-    public function serialize(): string {
-        assert($this->is_ready());
-        $serializer = SerializerBuilder::create()->build();
-        return $serializer->serialize($this->instance(), 'json');
-    }
+    public function serialize(): string { return ''; }
+    public function deserialize($json_data): self { return $this; }
 
-    public function deserialize($json_data): self {
-        $serializer = SerializerBuilder::create()->build();
-        $ent = $serializer->deserialize($json_data, $this->className(), 'json');
-        return $this->attach($ent);
+    // -------------------------
+    public function import(string $className, string $fileName){
+        $json_file = file_get_contents($fileName);
+        $json_data = json_decode($json_file, true);
+
+        foreach($json_data as $item) {
+            $this->attach($className);     // Новый инстанс класса
+            $this->update($item);          // Идем обновлять данные в базе
+        }
     }
 
     // -------------------------
     public function update($json_data = null, array $context = []) {
         if (!$this->is_ready()) return null;
-        if (isset($json_data)) $this->deserialize($json_data); // Set entity data (deserialize)
 
-        // Вызываем метод объекта
-        $this->integrity()->onUpdate($this->_em, $context);
+        // Вызываем метод объекта для сериализации
+        if (isset($json_data)) $this->link($this->integrity()->json_deserialize($this->_em, $json_data));
+        if (!$this->is_ready()) return null;
+
+        // Вызываем метод объекта для валидации
+        $is_valid = $this->integrity()->onUpdate($this->_em, $context);
 
         // Обновляем базу
-        $this->_em->persist($this->instance());
-        $this->_em->flush();
+        if ($is_valid) {
+            try {
+                $this->_em->persist($this->instance());
+                $this->_em->flush();
+            } catch (\Exception $exception) {}
+        }
     }
 
+    // -------------------------
     public function remove(): void {
         assert($this->is_ready(), "$this - Self validity check");
 

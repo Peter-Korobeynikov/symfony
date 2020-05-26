@@ -11,7 +11,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\JoinColumn;
+use JMS\Serializer\SerializerBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Validation;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -101,12 +103,50 @@ class Product implements EntityIntegrityInterface
     }
 
     //------------------- EntityIntegrityInterface
-    public function onUpdate(EntityManagerInterface $em,array $context = []) {
-        echo '*** onUpdate Product';
+    public function json_serialize(): string {
+        $serializer = SerializerBuilder::create()->build();
+        return $serializer->serialize($this, 'json');
     }
 
-    public function onRemove(EntityManagerInterface $em) {
-        echo '*** onRemove Product';
+    public function json_deserialize(EntityManagerInterface $em, $json_data): object {
+        // Убеждаемся, что у нас ассоциативный массив свойств ('eId' - обязательное)
+        if (!is_array($json_data)) $json_data = json_decode(json_encode($json_data),true);
+        if (!array_key_exists('eId', $json_data)) return null;
+
+        // Проверяем наличие элемента в базе с тем же ключом 'eId'
+        $product = $em->getRepository(Product::class)->findOneBy(['eId' => $json_data['eId']]);
+        if (!isset($product) || empty($product)) $product = $this;
+
+        // Раскладываем значения по полочкам
+        foreach ($json_data as $key => $value) {
+            switch ($key) {
+                case 'eId':             $product->setEId($value); break;
+                case 'title':           $product->setTitle($value); break;
+                case 'price':           $product->setPrice($value); break;
+                case 'categoryEId':
+//                    $data = json_decode(json_encode($value),true);
+//                    foreach ($data as $value) {
+//                        $category = $em->getRepository(Category::class)->findOneBy(['eId' => $value]);
+//                        if (isset($category) && !empty($category)) {
+//                            $product->addCategory($category);
+//                        }
+//                    }
+                    break;
+            }
+        }
+        return $product;
+    }
+
+    public function onUpdate(EntityManagerInterface $em,array $context = []): bool {
+        // Вызываем метод Doctrine для валидации
+        $validator = Validation::createValidator();
+        $errors = $validator->validate($this);
+        if (count($errors) > 0) return false;
+        return true;
+    }
+
+    public function onRemove(EntityManagerInterface $em): bool {
+        return true;
     }
 
 }

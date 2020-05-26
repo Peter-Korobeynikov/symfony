@@ -26,6 +26,11 @@ class CategoryController extends AbstractController
     public function index(Request $request, CategoryRepository $categoryRepository,
                           PaginatorInterface $paginator): Response
     {
+
+        $path = __DIR__. DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Service' . DIRECTORY_SEPARATOR;
+        $fileName = $path . 'categories.json';
+        $this->getPM()->import(Category::class, $fileName);
+
         $categories = $categoryRepository->findAll();
         //$queryBuilder = $categoryRepository->findAllCategories();
         $pagination = $paginator->paginate(
