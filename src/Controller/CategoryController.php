@@ -7,7 +7,6 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,16 +26,15 @@ class CategoryController extends AbstractController
                           PaginatorInterface $paginator): Response
     {
 
-        $path = __DIR__. DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Service' . DIRECTORY_SEPARATOR;
-        $fileName = $path . 'categories.json';
-        $this->getPM()->import(Category::class, $fileName);
+        // Здесь я имитировал импорт из файла для отладки Categories
+//        $path = __DIR__. DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Service' . DIRECTORY_SEPARATOR;
+//        $fileName = $path . 'categories.json';
+//        $this->getPM()->import(Category::class, $fileName);
 
         $categories = $categoryRepository->findAll();
         //$queryBuilder = $categoryRepository->findAllCategories();
         $pagination = $paginator->paginate(
-            $categories, // $queryBuilder,
-            $request->query->getInt('page', 1),
-            5 /*page number*/
+            $categories, $request->query->getInt('page', 1), 5 /*page number*/
         );
 
         return $this->render('category/index.html.twig', [

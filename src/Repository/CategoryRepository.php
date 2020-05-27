@@ -19,13 +19,6 @@ class CategoryRepository extends ServiceEntityRepository
     }
     public function __destruct() {}
 
-//    public function findAllCategories() {
-//        return $this->createQueryBuilder('c')
-//            ->orderBy('c.id', 'ASC')
-//            ->getQuery()
-//            ;
-//    }
-
     // /**
     //  * @return Category[] Returns an array of Category objects
     //  */

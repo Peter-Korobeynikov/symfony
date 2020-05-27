@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Категории{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1><strong>Категории</strong></h1>
+    <hr />
+
+    <a href="{{ '/main' }}">Главная</a>
+    <a href="{{ '/product' }}">Товары</a>
 
     <table class="table">
         <thead>
@@ -12,7 +16,7 @@
                 <th>Title</th>
                 <th>EId</th>
                 <th>Content</th>
-                <th>actions</th>
+                <th>Действия</th>
             </tr>
         </thead>
         <tbody>
@@ -23,13 +27,13 @@
                 <td>{{ category.eId }}</td>
                 <td>{{ category.content }}</td>
                 <td>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                    <a href="{{ path('category_show', {'id': category.id}) }}">Смотреть</a>
+                    <a href="{{ path('category_edit', {'id': category.id}) }}">Редактировать</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Записей не найдено</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -37,5 +41,5 @@
 
     {{ knp_pagination_render(pagination) }}
 
-    <a href="{{ path('category_new') }}">Create new</a>
+    <a href="{{ path('category_new') }}">Создать</a>
 {% endblock %}

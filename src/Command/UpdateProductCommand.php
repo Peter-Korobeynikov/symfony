@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Common\TProductManager;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Service\ProductManager;
@@ -12,15 +13,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class UpdateProductCommand extends Command
 {
-    private $_pm;
-    protected $overwriteFlag = true;
+    use TProductManager;
+
+    private $file_type = 1;
     protected static $defaultName = 'app:product-updater';
 
     // -------------------------
-    public function __construct(ProductManager $pm, int $file_type = 1)
+    public function __construct()
     {
-        $this->_pm = $pm;
-        $this->file_type = $file_type;
         parent::__construct();
     }
 

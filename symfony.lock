@@ -179,6 +179,9 @@
     "phpdocumentor/type-resolver": {
         "version": "1.1.0"
     },
+    "phpmailer/phpmailer": {
+        "version": "v6.1.5"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -217,6 +220,9 @@
         "files": [
             "./config/packages/security_checker.yaml"
         ]
+    },
+    "swiftmailer/swiftmailer": {
+        "version": "v6.2.3"
     },
     "symfony/asset": {
         "version": "v5.0.8"
@@ -328,6 +334,15 @@
             "./src/Controller/.gitignore",
             "./src/Kernel.php"
         ]
+    },
+    "symfony/google-mailer": {
+        "version": "4.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.4",
+            "ref": "f8fd4ddb9b477510f8f4bce2b9c054ab428c0120"
+        }
     },
     "symfony/http-client": {
         "version": "v5.0.8"
@@ -489,6 +504,15 @@
     "symfony/security-http": {
         "version": "v5.0.8"
     },
+    "symfony/sendgrid-mailer": {
+        "version": "4.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.4",
+            "ref": "b46e4f8f1adb2864f0aa9c0ff57aea3324a07199"
+        }
+    },
     "symfony/serializer": {
         "version": "v5.0.8"
     },
@@ -503,6 +527,20 @@
     },
     "symfony/string": {
         "version": "v5.0.8"
+    },
+    "symfony/swiftmailer-bundle": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "ae4d22af30bbd484506bc1817c5a3ef72c855b93"
+        },
+        "files": [
+            "./config/packages/dev/swiftmailer.yaml",
+            "./config/packages/swiftmailer.yaml",
+            "./config/packages/test/swiftmailer.yaml"
+        ]
     },
     "symfony/test-pack": {
         "version": "v1.0.6"

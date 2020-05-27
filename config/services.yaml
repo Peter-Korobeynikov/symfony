@@ -4,7 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-#    app.admin_email: 'peter.korobeynikov@gmail.com'
+    app.serialize_format: 'json'
 
 services:
     # default configuration for services in *this* file
@@ -37,6 +37,10 @@ services:
 #    app.command.update_product_command:
     App\Command\UpdateProductCommand:
         arguments:
-#            - "%app.admin_email%"
+            - "%app.serialize_format%"
         tags:
             - { name: console.command, command: app:product-updater }
+
+    App\EventListener\DatabaseSubscriber:
+        tags:
+            - { name: 'doctrine.event_subscriber' }

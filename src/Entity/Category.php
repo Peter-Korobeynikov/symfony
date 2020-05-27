@@ -64,12 +64,7 @@ class Category implements EntityIntegrityInterface //, \JsonSerializable
     public function setContent(string $content): self { $this->content = $content; return $this; }
 
     protected function _serialize() {
-        return [
-            'id' => $this->id,
-            'title' => $this->title,
-            'eId' => $this->eId,
-            'content' => $this->content
-        ];
+        return [ 'id' => $this->id, 'title' => $this->title, 'eId' => $this->eId ];
     }
     public function __toString(): string {
         $str = implode(', ',$this->_serialize());

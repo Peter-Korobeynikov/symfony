@@ -76,7 +76,10 @@ class ProductManager
             try {
                 $this->_em->persist($this->instance());
                 $this->_em->flush();
-            } catch (\Exception $exception) {}
+            } catch (\Exception $exception) {
+                // Здесь нужен обработчик ...
+
+            }
         }
     }
 

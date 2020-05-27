@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poster{% endblock %}
+
+{% block body %}
+    <h1>Poster</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ poster.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ poster.text }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('poster_index') }}">back to list</a>
+
+    <a href="{{ path('poster_edit', {'id': poster.id}) }}">edit</a>
+
+    {{ include('poster/_delete_form.html.twig') }}
+{% endblock %}
