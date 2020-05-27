@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e7e1fe-421c-4515-854a-4f89f0dae73f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/PosterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Poster.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventListener/DatabaseSubscriber.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/PosterType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/PosterRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/poster/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/poster/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/poster/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/poster/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/poster/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/poster/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/mailer.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/UpdateProductCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/UpdateProductCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TestController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProductManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/category.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/part.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/test/test.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PosterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PosterController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/PosterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="830">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="1207">
+              <caret line="71" selection-start-line="71" selection-end-line="72" />
               <folding>
                 <element signature="e#34#60#0#PHP" expanded="true" />
               </folding>
@@ -77,11 +33,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/services.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="49" selection-start-line="49" selection-end-line="50" />
+            <state relative-caret-position="646">
+              <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+              <folding>
+                <marker date="1590480154380" expanded="true" signature="1410:1534" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,8 +48,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Service/ProductManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+            <state relative-caret-position="404">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Service/EntityIntegrityInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/ProductType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -98,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Command/UpdateProductCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+            <state relative-caret-position="369">
+              <caret line="31" selection-start-line="31" selection-end-line="32" />
               <folding>
                 <element signature="e#31#62#0#PHP" expanded="true" />
               </folding>
@@ -111,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/src/EventListener/DatabaseSubscriber.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
-              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+              <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="1" />
               <folding>
                 <element signature="e#38#74#0#PHP" expanded="true" />
               </folding>
@@ -184,7 +179,6 @@
         <option value="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
         <option value="$PROJECT_DIR$/src/EventListener/DatabaseSubscriber.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/src/Controller/PosterController.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Command/UpdateProductCommand.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
@@ -202,6 +196,7 @@
         <option value="$PROJECT_DIR$/templates/product/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/category/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Service/ProductManager.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PosterController.php" />
       </list>
     </option>
   </component>
@@ -355,7 +350,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
-    <option name="width" value="1955" />
+    <option name="width" value="1940" />
     <option name="height" value="2111" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -457,7 +452,7 @@
     <property name="Constants" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -519,7 +514,7 @@
       <workItem from="1590000005447" duration="17703000" />
       <workItem from="1590131492879" duration="1444000" />
       <workItem from="1590133475154" duration="159520000" />
-      <workItem from="1590515342815" duration="20634000" />
+      <workItem from="1590515342815" duration="24777000" />
     </task>
     <task id="LOCAL-00001" summary="Step 1. Ready to start">
       <created>1589921424101</created>
@@ -558,7 +553,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259292000" />
+    <option name="totallyTimeSpent" value="263435000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,23 +565,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1303" height="1407" extended-state="0" />
+    <frame x="-7" y="0" width="1323" height="1407" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49886364" visible="true" weight="0.24296057" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49886364" visible="true" weight="0.23911323" />
       <window_info id="Structure" order="1" sideWeight="0.50113636" side_tool="true" weight="0.24476534" />
       <window_info id="Favorites" order="2" sideWeight="0.5006536" side_tool="true" weight="0.24476534" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.7200647" weight="0.32784313" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919093" weight="0.32941177" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8114887" visible="true" weight="0.28313726" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8114887" weight="0.28313726" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4996215" weight="0.22431372" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.8470874" weight="0.25568628" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.8470874" visible="true" weight="0.25568628" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.15291262" side_tool="true" weight="0.26352942" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -663,31 +658,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="792" column="9" selection-start-line="792" selection-start-column="9" selection-end-line="792" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMessage.php" />
-    <entry file="file://$PROJECT_DIR$/templates/poster/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="577" selection-start-line="577" selection-end-line="577" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport.php" />
     <entry file="file://$PROJECT_DIR$/config/packages/swiftmailer.yaml" />
     <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
@@ -782,16 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <marker date="1590480154380" expanded="true" signature="1410:1534" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,19 +919,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="49" selection-start-line="49" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/ProductManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+        <state relative-caret-position="404">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/EntityIntegrityInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/ProductType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Command/UpdateProductCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        <state relative-caret-position="369">
+          <caret line="31" selection-start-line="31" selection-end-line="32" />
           <folding>
             <element signature="e#31#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding>
+            <marker date="1590480154380" expanded="true" signature="1410:1534" ph="..." />
           </folding>
         </state>
       </provider>
@@ -979,7 +984,7 @@
     <entry file="file://$PROJECT_DIR$/src/EventListener/DatabaseSubscriber.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <caret line="33" selection-start-line="33" selection-end-line="33" selection-end-column="1" />
           <folding>
             <element signature="e#38#74#0#PHP" expanded="true" />
           </folding>
@@ -988,18 +993,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/PosterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="830">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="1207">
+          <caret line="71" selection-start-line="71" selection-end-line="72" />
           <folding>
             <element signature="e#34#60#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="49" selection-start-line="49" selection-end-line="50" />
         </state>
       </provider>
     </entry>

@@ -27,9 +27,6 @@ class PosterController extends AbstractController
         $this->_mail->IsSMTP();                                    // telling the class to use SMTP
         $this->_mail->SMTPAuth   = true;                           // enable SMTP authentication
         $this->_mail->Port       = 465;                            // sets Port of SMTP server
-//        $this->_mail->Host       = "smtp.gmail.ru";                // sets the SMTP server
-//        $this->_mail->Username   = "peter.korobeynikov@gmail.com"; // SMTP account username
-//        $this->_mail->Password   = "Esmart~!3";                    // SMTP account password
         $this->_mail->Host       = "smtp.yandex.ru";                // sets the SMTP server
         $this->_mail->Username   = "korobeynikov.pv@yandex.ru";     // SMTP account username
         $this->_mail->Password   = "Esmart-1734";                   // SMTP account password
@@ -42,11 +39,6 @@ class PosterController extends AbstractController
     }
     public function __construct()   { $this->init(); }
     public function getMail()       { assert(isset($this->_mail)); return $this->_mail; }
-
-    /**
-     * @Route("/", name="poster_index", methods={"GET"})
-     */
-    public function index(PosterRepository $posterRepository): Response { return Response::create(); }
 
     /**
      * @Route("/email", name="poster_new", methods={"GET","POST"})
@@ -72,6 +64,11 @@ class PosterController extends AbstractController
         }
         return Response::create();
     }
+
+    /**
+     * @Route("/", name="poster_index", methods={"GET"})
+     */
+    public function index(PosterRepository $posterRepository): Response { return Response::create(); }
 
     /**
      * @Route("/{id}", name="poster_show", methods={"GET"})
